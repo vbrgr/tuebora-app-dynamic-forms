@@ -1,0 +1,127 @@
+{
+  "menu": {
+    "name": "Administrator Menu",
+    "description": "Primary & Utility Menu Specifications of administrator",
+    "url": "adminmenus",
+    "id": "administratormenu",
+    "category": [
+      "com:tuebora:ui:menu:admin:resource"
+    ],
+    "properties": {
+      "position": "top",
+      "sideToggle": false
+    },
+    "sections": {
+      "utility": [
+        {
+          "label": "User Preferences",
+          "icon": "tueboraIcon-log-out",
+          "path": "/user-preferences",
+          "id": "com:tuebora:ui:utility:menu:preferences",
+          "target": "_self"
+        },
+        {
+          "label": "Logout",
+          "icon": "tueboraIcon-log-out",
+          "path": "/logout",
+          "id": "com:tuebora:ui:utility:menu:logout",
+          "target": "_self"
+        }
+      ],
+      "primary": [
+        {
+          "label": "Datamodel",
+          "icon": "fa fa-database",
+          "path": "/datamodel",
+          "description": "Resource Management",
+          "id": "com:tuebora:ui:menu:datamodel",
+          "target": "_self",
+          "children": []
+        },
+        {
+          "label": "UI Management",
+          "icon": "fa fa-diamond",
+          "path": "/navigation",
+          "id": "com:tuebora:ui:menu:uikits",
+          "target": "_self",
+          "children": [
+            {
+              "label": "Menu Management",
+              "icon": "fas fa-bars",
+              "description": "Manage menu navigation for all Roles",
+              "path": "/menus",
+              "id": "com:tuebora:ui:menu:navigation",
+              "target": "_self",
+              "children": []
+            },
+            {
+              "label": "Page Management",
+              "icon": "tueboraIcon-view-history",
+              "path": "/pages",
+              "description": "Construct new pages based on tabular, chart and custom layouts",
+              "id": "com:tuebora:ui:menu:newpage",
+              "target": "_self",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Workflows",
+          "icon": "fa fa-sitemap",
+          "path": "/views/workflowmanagement",
+          "id": "com:tuebora:ui:menu:workflowmanagement",
+          "description": "Manage your Workflows",
+          "target": "_self",
+          "children": [
+            {
+              "label": "All Workflows",
+              "icon": "",
+              "path": "/workflows",
+              "description": "Manage all of your Workflows",
+              "id": "com:tuebora:ui:menu:workflowmanagement",
+              "target": "_self",
+              "children": []
+            },
+            {
+              "label": "Execution History",
+              "icon": "",
+              "id": "com:tuebora:ui:menu:workflowmanagement:executionhistory",
+              "path": "/execution-history",
+              "description": "Manage the Worfklows which are executed",
+              "target": "_self",
+              "children": []
+            },
+            {
+              "label": "Messages",
+              "icon": "",
+              "id": "com:tuebora:ui:menu:workflowmanagement:messages",
+              "target": "_self",
+              "description": "Manage the Worfklows which are executed",
+              "path": "/messages",
+              "children": []
+            },
+            {
+              "label": "Reusable tasks",
+              "icon": "",
+              "path": "/reusable-tasks",
+              "target": "_self",
+              "description": "Manage the Resubale tasks",
+              "id": "com:tuebora:ui:menu:workflowmanagement:reusabletasks",
+              "children": []
+            },
+            {
+              "label": "Bindings",
+              "icon": "",
+              "path": "/bindings",
+              "target": "_self",
+              "description": "Manage the Worfklows bindings",
+              "id": "com:tuebora:ui:menu:workflowmanagement:bindings",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+
+}

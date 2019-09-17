@@ -1,0 +1,65 @@
+<div class="content-page">
+		<div class="pageHeading">
+        <div class="container-fluid">
+            <div class="left-col">
+              <h2>{{pageTitle}}</h2>
+            </div>
+            <div class="right-col">
+               <!-- <a href="my-profile-edit.html" class="edit-profile-bt"><img src="images/edit-icon.png" alt="" />Edit Profile </a> -->
+            </div>
+          </div>
+		</div>
+
+		<!-- Page Heading Completed -->
+    <div class="container-fluid preferences-block-container">
+        <div class="pre-uiblock">
+          <div class="row">
+
+                <div class="col-md-12">
+
+                  <div class="preferences-contnet-block">
+                      <form [formGroup]='preferencesForm'>
+                    <div class="row">
+
+                      <div class="col-md-3">
+
+                          <div class="form-group">
+                              <label>Select Preferences</label>
+                              <!-- <input type="text" class="form-control" formControlName="preferences"  placeholder="Enter Course Name"> -->
+
+                              <select class="form-control" formControlName="position" id="sel1">
+                                  <option selected value='top'>Top Menu (with icon)</option>
+                                  <option value='top-noicon'>Top Meu (without icon)</option>
+                                  <option value='side-toggle'>Slide Menu (with toggle button)</option>
+                                  <option value='side-hover'>Slide Menu (on hover)</option>
+                                </select>
+
+
+
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-default saveSubmitBtn" (click)="setUserpreference()"> Save</button>
+                            </div>
+
+
+
+
+                  </div>
+                    </div>
+
+                  </form>
+                </div>
+
+            </div>
+
+          </div>
+        </div>
+    </div>
+
+
+
+
+		</div>
+
+
+

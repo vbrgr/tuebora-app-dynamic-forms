@@ -1,0 +1,8 @@
+/* navigation option2 styles */
+/* .navi-noicon .container-fluid{ padding-left: 20px; padding-right: 20px;}  */
+.navi-noicon.leftNavigation > li > a{     padding: 27px 10px; font-size: 13px;     color: #414d5c;  font-weight: 500;}
+.navi-noicon.leftNavigation > li > a:hover{ color: #4a8bfc;}
+.navi-noicon.navbar-fixed-top{ box-shadow: 0 2px 6px 0 rgba(0,0,0,.04), 0 6px 12px rgba(0,0,0,.02); border-bottom:none;}
+.navi-noicon.navbar-brand>img{ border-right:none;}
+
+.navi-noicon.navbar-default .navbar-nav>li>a span{     display: inline-block;}

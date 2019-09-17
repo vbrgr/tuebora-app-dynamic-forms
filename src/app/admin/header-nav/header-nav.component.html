@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default navbar-fixed-top" [ngClass]="(menuType==='top-noicon')?'navi-noicon':''">
+  <div class="container-fluid">
+    <div class="navbar-header">
+       <a class="navbar-brand" routerLink="/"><img src="assets/images/logo.png" alt="Tuebora"/> </a>
+      </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav leftNavigation">
+      <!-- <li><a href="index.html"><img src="images/home-icon.png" class="center-block" alt="" /> Home</a> </li> -->
+<li *ngFor="let menu of primaryMenuData"  [ngClass]="(menu.children.length > 0)?'dropdown':''">
+<a [routerLink]="menu.path">
+  <span class="center-block" *ngIf="menuType==='top'">
+      <i [class]="menu.icon" aria-hidden="true"></i>
+  </span>
+
+   <!-- <img [src]="" class="center-block" alt=""> -->
+  {{menu.label}}
+
+</a>
+<ul class="dropdown-menu" *ngIf="menu.children.length > 0" >
+    <li *ngFor="let submenu of menu.children">
+      <a [routerLink]="submenu.path">
+        <h5>{{submenu.label}}</h5>
+        <span>{{submenu.description}} </span>
+      </a>
+
+    </li>
+
+  </ul>
+</li>
+</ul>
+<ul class="nav navbar-nav navbar-right rightNavigation">
+<li class="dropdown profileNav"> <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class=profilePic><img class="img-circle" alt="sanjay" src="assets/images/sanjay.jpg"></span><span class="noborder glyphicon glyphicon-chevron-down"></span></a>
+      <div class="dropdown-menu">
+        <div class="notifications">
+        <h3 class="text-center">&nbsp;</h3>
+        <div class="profileIcon"><span class="glyphicon glyphicon-user large-size"></span>
+          <h3>Sanjay Nadimpalli</h3>
+        </div>
+        <ul class="submenuNav">
+          <li *ngFor="let umenu of utilityMenuData">
+              <a [routerLink]="umenu.path" [target]="umenu.target">
+                <span>  <i [class]="umenu.icon" aria-hidden="true"></i></span>
+               {{umenu.label}} </a></li>
+         </ul>
+        </div>
+      </div>
+      </li>
+    </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+  </nav>

@@ -1,0 +1,52 @@
+
+<!-- ========== Left Sidebar Start ========== -->
+<div class="left side-menu">
+    <div class="topbar">
+				<div class="topbar-left">
+					<a routerLink="" class="logo">
+						<span><img src="assets/images/logo-sm.png" alt=""/></span>
+						<i><img src="assets/images/logo-sm.png" alt=""></i>
+					</a>
+					 <button type="button" class="button-menu-mobile open-left">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</button>
+				</div>
+
+
+      </div>
+      <ul class="profile-nav">
+          <li><a href="profile.html"><span class="profilePic"><img class="img-circle" alt="sanjay" src="assets/images/sanjay.jpg"></span></a></li>
+        </ul>
+
+    <div class="slimscroll-menu" id="remove-scroll">
+      <div id="sidebar-menu">
+        <ul class="metisMenu nav" id="side-menu">
+
+                 <li *ngFor="let menu of primaryData"> <!-- [routerLink]="menu.path" -->
+                   <a onclick="activeMenu()" class="main-navh" data-toggle="tooltip" title="Home" data-placement="right">
+                     <span>
+                        <i [class]="menu.icon" aria-hidden="true"></i>
+                     </span>
+                    <span class="lbl">{{menu.label}}</span>
+                  </a>
+                  <ul class="nav-second-level nav" aria-expanded="true"  *ngIf="menu.children.length > 0">
+                      <li *ngFor="let submenu of menu.children">
+                          <a [routerLink]="submenu.path">
+                              <span>
+                                  <i [class]="menu.icon" aria-hidden="true"></i>
+                               </span>
+                           {{submenu.label}}</a></li>
+
+                    </ul>
+                </li>
+
+
+
+
+
+            </ul>
+      </div>
+
+    </div>
+  </div>
+
