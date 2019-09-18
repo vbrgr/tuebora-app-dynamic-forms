@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -29,6 +30,7 @@ export class TueSidebarComponent implements OnInit {
   }
   actionLink(){
   //  alert(1);
+  
 
   }
 

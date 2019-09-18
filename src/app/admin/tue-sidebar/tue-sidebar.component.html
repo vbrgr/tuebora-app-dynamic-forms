@@ -24,7 +24,7 @@
       </ul>
     </li>
     <li *ngFor="let profilmenu of utilityMenuData">
-      <a [routerLink]="profilmenu.path" (click)="actionLink()">
+      <a [routerLink]="profilmenu.path" >
         <span class="icon">
         <i [class]="profilmenu.icon" aria-hidden="true"></i>
       </span>

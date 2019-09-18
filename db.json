@@ -118,6 +118,15 @@
               "children": []
             }
           ]
+        },
+        {
+          "label": "Registration",
+          "icon": "fa fa-database",
+          "path": "/user-dynamic-form",
+          "description": "Registration",
+          "id": "com:tuebora:ui:menu:userdynamicform",
+          "target": "_self",
+          "children": []
         }
       ]
     }

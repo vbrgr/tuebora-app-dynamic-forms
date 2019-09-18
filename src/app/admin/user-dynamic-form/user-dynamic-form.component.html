@@ -1,0 +1,31 @@
+<div class="pageHeading">
+    <div class="container-fluid">
+      <div class="left-col">
+        <h2 >Registration Form</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="main-container">
+        <div id="wizard" class="changePwd ssoWizard">
+          <div class="newUser">
+          <div class="bigitem noborder">
+            <div class="editProfileForm ssoProfileForm">
+              <dynamic-form [fields]="regConfig" (submit)="submit($event)"></dynamic-form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="margin-top">
+          <div  class="bigitem editProfileForm-add">          
+            <div class="editProfileForm ">
+              <div class="row">
+                  {{ form.value | json }}
+              </div>
+            </div>
+              
+            </div>
+</div>
+</div>
+  
