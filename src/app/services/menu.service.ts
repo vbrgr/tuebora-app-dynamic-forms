@@ -15,11 +15,11 @@ export class MenuService {
 
 
   public getMenuData():any {
-    this.http.get('http://localhost:3000/menu/').subscribe((res) => {
+    this.http.get('http://192.168.1.37:3000/menu/').subscribe((res) => {
       this.setMenuJson(res);
 
     });
-    return this.http.get('http://localhost:3000/menu/');
+    return this.http.get('http://192.168.1.37:3000/menu/');
 
   }
 
@@ -29,7 +29,7 @@ export class MenuService {
     menuData['properties'] = menuPos;
     // console.log('test',this.getMenuJson());
     this.eventEmiter(menuPos);
-    return this.http.put('http://localhost:3000/menu/', menuData);
+    return this.http.put('http://192.168.1.37:3000/menu/', menuData);
 
   }
 

@@ -1,4 +1,5 @@
-<div [formGroup]="group" [class]="field.groupClass" >
+<div [formGroup]="group" [class]="field.columnClass" >
+        <div  [class]="field.groupClass" >
 <label>{{field.label}}</label>
 <div *ngIf="field.enum">
 <label *ngFor="let item of field.enum"  > 
@@ -7,4 +8,4 @@
 <ng-container *ngFor="let validation of field.validations;"  >
      <span class="error-message"  *ngIf="group.get(field.name).hasError(validation.name)">{{validation.message}}</span>
  </ng-container>
-</div>
+</div></div>

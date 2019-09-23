@@ -9,10 +9,12 @@ import { DateComponent } from '../date/date.component';
 import { RadioComponent } from '../radio/radio.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { TextareaComponent } from '../textarea/textarea.component';
+import { FormTitleComponent } from '../form-title/form-title.component';
 
 
 const componentMapper = {
   input: InputComponent,
+  object: FormTitleComponent,
   string: InputComponent,
   button: ButtonComponent,
   select: SelectComponent,

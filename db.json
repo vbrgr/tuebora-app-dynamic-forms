@@ -8,7 +8,7 @@
       "com:tuebora:ui:menu:admin:resource"
     ],
     "properties": {
-      "position": "side-toggle"
+      "position": "top"
     },
     "sections": {
       "utility": [
@@ -130,5 +130,258 @@
         }
       ]
     }
-  }
+  },
+  "form": [
+    {
+      "schema": {
+        "id": "schema_userform",
+        "type": "object",
+        "title": "User Dynamic Form",
+        "properties": {
+          "firstName": {
+            "name": "firstName",
+            "title": "First Name",
+            "label": "First Name",
+            "inputType": "text",
+            "htmlClass": "form-control",
+            "groupClass": "form-group",
+            "columnClass": "col-md-6",
+            "type": "input",
+            "min": 3,
+            "max": 25,
+            "pattern": "/^[a-zA-Z0-9]$/",
+            "validations": [
+              {
+                "name": "required",
+                "validator": true,
+                "message": "We greet by first name"
+              },
+              {
+                "name": "minlength",
+                "validator": 3,
+                "message": ""
+              },
+              {
+                "name": "maxlength",
+                "validator": 25,
+                "message": ""
+              },
+              {
+                "name": "pattern",
+                "validator": "^[a-zA-Z0-9_-]+$",
+                "message": "Name should not start or end with Special Characters"
+              }
+            ],
+            "validationMessage": [
+              {
+                "required": "We greet by first name"
+              },
+              {
+                "pattern": "Name should not start or end with Special Characters"
+              }
+            ]
+          },
+          "lastName": {
+            "name": "lastName",
+            "label": "Last Name",
+            "title": "Last Name",
+            "inputType": "text",
+            "htmlClass": "form-control",
+            "groupClass": "form-group",
+            "columnClass": "col-md-6",
+            "type": "input"
+          },
+          "gender": {
+            "type": "radiobutton",
+            "name": "gender",
+            "title": "Gender",
+            "label": "Gender",
+            "htmlClass": "",
+            "value": "male",
+            "groupClass": "form-group",
+            "columnClass": "col-md-6",
+            "enum": [
+              {
+                "key": "Male",
+                "value": "male"
+              },
+              {
+                "key": "Female",
+                "value": "female"
+              }
+            ]
+          },
+          "mobile": {
+            "name": "mobile",
+            "label": "Contact Number",
+            "title": "Contact Number",
+            "type": "input",
+            "inputType": "number",
+            "htmlClass": "form-control",
+            "groupClass": "form-group",
+            "columnClass": "col-md-6",
+            "validations": [
+              {
+                "name": "required",
+                "validator": true,
+                "message": "Mobile is required"
+              },
+              {
+                "name": "min",
+                "validator": 10,
+                "message": ""
+              },
+              {
+                "name": "max",
+                "validator": 10,
+                "message": ""
+              }
+            ]
+          },
+          "location": {
+            "name": "location",
+            "title": "Location",
+            "label": "Location",
+            "type": "input",
+            "inputType": "text",
+            "htmlClass": "form-control",
+            "groupClass": "form-group",
+            "columnClass": "col-md-6",
+            "min": 2,
+            "max": 10
+          },
+          "email": {
+            "name": "email",
+            "title": "Email Address",
+            "label": "Email Address",
+            "type": "input",
+            "inputType": "email",
+            "htmlClass": "form-control",
+            "groupClass": "form-group",
+            "columnClass": "col-md-6",
+            "description": "",
+            "validations": [
+              {
+                "name": "required",
+                "validator": true,
+                "message": "Email is required"
+              },
+              {
+                "name": "pattern",
+                "validator": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$",
+                "message": "Invalid email"
+              }
+            ],
+            "validationMessage": [
+              {
+                "required": "Email is required"
+              },
+              {
+                "pattern": "Invalid email"
+              }
+            ]
+          },
+          "joiningDate": {
+            "name": "joiningDate",
+            "title": "Joining Date",
+            "label": "Joining Date",
+            "htmlClass": "form-control",
+            "groupClass": "form-group",
+            "columnClass": "col-md-6",
+            "description": "",
+            "type": "date",
+            "inputType": "local-datetime",
+            "validations": [
+              {
+                "name": "required",
+                "validator": true,
+                "message": "Date is required"
+              }
+            ]
+          },
+          "comment": {
+            "name": "comment",
+            "title": "Comment",
+            "label": "Comment",
+            "htmlClass": "form-control",
+            "groupClass": "form-group",
+            "columnClass": "col-md-6",
+            "type": "textarea",
+            "validations": [
+              {
+                "name": "minlength",
+                "validator": 64,
+                "message": ""
+              },
+              {
+                "name": "maxlength",
+                "validator": 300,
+                "message": ""
+              }
+            ]
+          },
+          "reset": {
+            "type": "button",
+            "inputType": "reset",
+            "htmlClass": "btn btn-default",
+            "label": "Reset",
+            "groupClass": "pull-right col-md-1"
+          },
+          "submit": {
+            "type": "button",
+            "inputType": "submit",
+            "htmlClass": "btn btn-primary",
+            "groupClass": "pull-right col-md-1",
+            "label": "Submit"
+          }
+        },
+        "required": [
+          "firstName",
+          "email",
+          "mobile",
+          "joiningDate"
+        ]
+      },
+      "form": [
+        {
+          "type": "section",
+          "htmlClass": "row",
+          "items": [
+            {
+              "type": "section",
+              "htmlClass": "col-md-6",
+              "items": [
+                "firstName",
+                "lastName",
+                "gender",
+                "mobile",
+                "location"
+              ]
+            },
+            {
+              "type": "section",
+              "htmlClass": "col-md-6",
+              "items": [
+                "email",
+                "joiningDate",
+                "comment",
+                "reset",
+                "submit"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "reset",
+          "htmlClass": "btn btn-default",
+          "title": "Reset"
+        },
+        {
+          "type": "submit",
+          "htmlClass": "btn btn-primary",
+          "title": "Submit"
+        }
+      ]
+    }
+  ]
 }

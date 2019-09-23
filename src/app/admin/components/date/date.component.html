@@ -1,8 +1,9 @@
-<div [formGroup]="group"  [class]="field.groupClass">
+<div [formGroup]="group"  [class]="field.columnClass">
+        <div  [class]="field.groupClass" >
 <label>{{field.label}} </label>
 <input  [class]="field.htmlClass"  type="datetime-local"  [formControlName]="field.name" [placeholder]="field.label">
 <ng-container *ngFor="let validation of field.validations;"  >
      <span class="error-message"  *ngIf="group.get(field.name).hasError(validation.name)">{{validation.message}}</span>
  </ng-container>
- </div>
+ </div></div>
 

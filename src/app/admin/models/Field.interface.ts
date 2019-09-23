@@ -15,4 +15,5 @@ export interface FieldConfig {
   validations?: Validator[];
   htmlClass?: string;
   groupClass: string;
+  formTitle: string;
 }

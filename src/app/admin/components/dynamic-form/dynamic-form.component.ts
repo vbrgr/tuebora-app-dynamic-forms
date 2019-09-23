@@ -36,18 +36,18 @@ export class DynamicFormComponent implements OnInit {
     if (this.form.valid) {
       this.submit.emit(this.form.value);
     } else {
-      this.validateAllFormFields(this.form);
+     // this.validateAllFormFields(this.form);
     }
   }
 
   createControl() {
     const group = this.fb.group({});
-    // console.log(this.fields);
+    console.log(this.fields);
     this.fields.forEach(field => {
 
       if (field.validations) {
         field.validations.forEach(key => {
-
+          var validateby = key.validator;
           if (key.name === 'required') {
             key.validator = Validators.required;
             if (!key.message || key.message === '') {
@@ -55,46 +55,44 @@ export class DynamicFormComponent implements OnInit {
             }
           }
           if (key.name === 'pattern') {
-            key.validator = Validators.pattern(key.validator);
+            key.validator = Validators.pattern(validateby);
             if (!key.message || key.message === '') {
               key.message = field.label + ' does not match the pattern';
             }
           }
           if (key.name === 'min') {
-            key.validator = Validators.minLength(key.validator);
+            key.validator = Validators.minLength(validateby);
             if (!key.message || key.message === '') {
-              key.message = field.label + ' cannot be less than ' + key.validator;
+              key.message = field.label + ' cannot be less than ' + validateby;
             }
           }
           if (key.name === 'max') {
-            key.validator = Validators.maxLength(key.validator);
+            key.validator = Validators.maxLength(validateby);
             if (!key.message || key.message === '') {
-              key.message = field.label + ' cannot be greater than ' + key.validator;
+              key.message = field.label + ' cannot be greater than ' + validateby;
             }
           }
-          if (key.name === 'minLength') {
+          if (key.name === 'minLength' || key.name === 'minlength') {
             key.validator = Validators.minLength(key.validator);
             if (!key.message || key.message === '') {
-              key.message = field.label + ' must be longer than ' + key.validator + ' characters.';
+              key.message = field.label + ' must be longer than ' + validateby + ' characters.';
             }
           }
-          if (key.name === 'maxLength') {
+          if (key.name === 'maxLength' || key.name === 'maxlength') {
             key.validator = Validators.maxLength(key.validator);
             if (!key.message || key.message === '') {
-              key.message = field.label + ' must be shorter than ' + key.validator + ' characters.';
+              key.message = field.label + ' must be shorter than ' + validateby + ' characters.';
             }
           }
         });
-        //  console.log(field.validations);
       }
-
-
-      if (field.type !== 'button') {
+      if (field.type !== 'button' && field.type !== 'object') {
         const control = this.fb.control(
           field.value,
           this.bindValidations(field.validations || [])
         );
         group.addControl(field.name, control);
+        // console.log(control.errors);
       }
     });
     return group;

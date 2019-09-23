@@ -23,6 +23,7 @@ export class UserDynamicFormComponent implements OnInit {
         });
 
       });
+      main.push(res[0].schema);
       localStorage.setItem('jsondata', JSON.stringify(main));
     });
   }
