@@ -36,7 +36,7 @@ export class DynamicFormComponent implements OnInit {
     if (this.form.valid) {
       this.submit.emit(this.form.value);
     } else {
-     // this.validateAllFormFields(this.form);
+      this.validateAllFormFields(this.form);
     }
   }
 

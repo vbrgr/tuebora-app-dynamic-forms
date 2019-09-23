@@ -2,7 +2,7 @@
     <div class="container-fluid">
       <div class="left-col">
           <div *ngFor="let field of fields;" >
-                  <h2 *ngIf="field.type==='object'" dynamicField [field]="field" ></h2>
+                  <h2 class="likeWhat" *ngIf="field.type==='object'" dynamicField [field]="field" ></h2>
             </div>
        
       </div>
@@ -17,7 +17,7 @@
                 <div class="container">
                 <div class="col-md-12">
               
-              <form class="dynamic-form row" [formGroup]="form" (submit)="onSubmit($event)">
+              <form class="dynamic-form row" [formGroup]="form" >
                 <div *ngFor="let field of fields;" >
                   <ng-container *ngIf="field.type!=='object'" dynamicField [field]="field" [group]="form">
                   </ng-container>

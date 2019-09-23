@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FieldConfig } from '../models/Field.interface';
 import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form.component';
 import { FormService } from '../../services/form.service';
@@ -8,7 +8,7 @@ import { FormService } from '../../services/form.service';
   templateUrl: './user-dynamic-form.component.html',
   styleUrls: ['./user-dynamic-form.component.css']
 })
-export class UserDynamicFormComponent implements OnInit {
+export class UserDynamicFormComponent {
   formdata: {};
   @ViewChild(DynamicFormComponent, { static: true} ) form: DynamicFormComponent;
   constructor(private forms: FormService) {
@@ -31,9 +31,9 @@ export class UserDynamicFormComponent implements OnInit {
   getData(name) {
     return this.formdata[name];
   }
-  ngOnInit() {
-  }
+
 
   submit(value: any) {
+    console.log(1);
    }
 }
