@@ -1,7 +1,10 @@
   <div class="pageHeading">
     <div class="container-fluid">
       <div class="left-col">
-        <h2 >Registration Form</h2>
+          <div *ngFor="let field of fields;" >
+                  <h2 *ngIf="field.type==='object'" dynamicField [field]="field" ></h2>
+            </div>
+       
       </div>
     </div>
   </div>
@@ -15,8 +18,10 @@
                 <div class="col-md-12">
               
               <form class="dynamic-form row" [formGroup]="form" (submit)="onSubmit($event)">
-                <ng-container *ngFor="let field of fields;" dynamicField [field]="field" [group]="form">
+                <div *ngFor="let field of fields;" >
+                  <ng-container *ngIf="field.type!=='object'" dynamicField [field]="field" [group]="form">
                   </ng-container>
+                </div>
               </form>
               </div>
               </div>

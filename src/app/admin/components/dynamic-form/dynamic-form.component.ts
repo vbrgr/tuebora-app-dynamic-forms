@@ -42,7 +42,6 @@ export class DynamicFormComponent implements OnInit {
 
   createControl() {
     const group = this.fb.group({});
-    console.log(this.fields);
     this.fields.forEach(field => {
 
       if (field.validations) {

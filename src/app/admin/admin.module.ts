@@ -25,6 +25,7 @@ import { TextareaComponent } from './components/textarea/textarea.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { UserDynamicFormComponent } from './user-dynamic-form/user-dynamic-form.component';
+import { FormTitleComponent } from './components/form-title/form-title.component';
 const COMPONENTS = [
   HeaderComponent,
   MainrootComponent,
@@ -45,6 +46,7 @@ const COMPONENTS = [
   TextareaComponent,
   DynamicFieldDirective,
   DynamicFormComponent,
+  FormTitleComponent,
   UserDynamicFormComponent,
                     ];
 @NgModule({
@@ -78,6 +80,7 @@ const COMPONENTS = [
     DynamicFieldDirective,
     DynamicFormComponent,
     UserDynamicFormComponent,
+    FormTitleComponent,
     RouterModule
   ],
   entryComponents: [
@@ -88,6 +91,7 @@ const COMPONENTS = [
     RadioComponent,
     CheckboxComponent,
     TextareaComponent,
+    FormTitleComponent,
     HeaderNavComponent
   ]
 })
