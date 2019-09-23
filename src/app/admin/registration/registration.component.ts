@@ -1,18 +1,18 @@
-import { Component, ViewChild } from '@angular/core';
-import { FieldConfig } from '../models/Field.interface';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form.component';
-import { FormService } from '../../services/form.service';
+import { FormService } from 'src/app/services/form.service';
+import { FieldConfig } from '../models/Field.interface';
 
 @Component({
-  selector: 'app-user-dynamic-form',
-  templateUrl: './user-dynamic-form.component.html',
-  styleUrls: ['./user-dynamic-form.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class UserDynamicFormComponent {
+export class RegistrationComponent {
   formdata: {};
   @ViewChild(DynamicFormComponent, { static: true} ) form: DynamicFormComponent;
   constructor(private forms: FormService) {
-    this.forms.getForm().subscribe(res => {
+    this.forms.getRegForm().subscribe(res => {
       const main = [];
       this.formdata = res[0].schema.properties;
       res[0].form[0].items.forEach(newkey => {
@@ -23,10 +23,10 @@ export class UserDynamicFormComponent {
 
       });
       main.push(res[0].schema);
-      localStorage.setItem('jsondata', JSON.stringify(main));
+      localStorage.setItem('jsonregdata', JSON.stringify(main));
     });
   }
-  regConfig: FieldConfig[] = JSON.parse(localStorage.getItem('jsondata'));
+  regConfig: FieldConfig[] = JSON.parse(localStorage.getItem('jsonregdata'));
   getData(name) {
     return this.formdata[name];
   }

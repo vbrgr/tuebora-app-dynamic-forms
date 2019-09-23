@@ -3,6 +3,7 @@ import { MainrootComponent } from './mainroot/mainroot.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserPreferencesComponent } from './user-preferences/user-preferences.component';
 import { UserDynamicFormComponent } from './user-dynamic-form/user-dynamic-form.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 export const routes: Routes = [
   {
@@ -16,5 +17,9 @@ export const routes: Routes = [
   {
     path: 'user-dynamic-form',
     component: UserDynamicFormComponent,
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
   }
 ]

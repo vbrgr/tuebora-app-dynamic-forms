@@ -5,7 +5,7 @@ import {
   Validators,
   FormControl
 } from '@angular/forms';
-import { FieldConfig, Validator } from '../../models/Field.interface';
+import { FieldConfig } from '../../models/Field.interface';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -27,10 +27,12 @@ export class DynamicFormComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    //console.log(1);
     this.form = this.createControl();
   }
 
   onSubmit(event: Event) {
+   // console.log(1);
     event.preventDefault();
     event.stopPropagation();
     if (this.form.valid) {

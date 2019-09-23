@@ -15,16 +15,7 @@ formd: FieldConfig[];
   public getForm() {
     return this.http.get('http://192.168.1.37:3000/form');
   }
-  public getUserForm() {
-    this.http.get('https://my-json-server.typicode.com/vbrgr/dynamic-form').subscribe((res) => {
-      this.setFormData(res);
-    });
-    return this.http.get<FieldConfig[]>('https://my-json-server.typicode.com/vbrgr/dynamic-form');
-  }
-  public getFormData() {
-    return this.formd;
-  }
-  public setFormData(data) {
-    this.formd = data;
+  public getRegForm() {
+    return this.http.get('http://192.168.1.37:3000/reg-form');
   }
 }

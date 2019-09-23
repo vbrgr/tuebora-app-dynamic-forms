@@ -1,7 +1,7 @@
   <div class="pageHeading">
     <div class="container-fluid">
       <div class="left-col">
-          <div *ngFor="let field of fields;" >
+          <div *ngFor="let field of fields;"  class="btn-inline">
                   <h2 class="likeWhat" *ngIf="field.type==='object'" dynamicField [field]="field" ></h2>
             </div>
        
@@ -17,19 +17,31 @@
                 <div class="container">
                 <div class="col-md-12">
               
-              <form class="dynamic-form row" [formGroup]="form" >
+              <form class="dynamic-form" [formGroup]="form" >
+                  <div class="row">
                 <div *ngFor="let field of fields;" >
-                  <ng-container *ngIf="field.type!=='object'" dynamicField [field]="field" [group]="form">
+                
+                  <ng-container *ngIf="field.type!=='object' && field.type!=='button'" dynamicField [field]="field" [group]="form">
                   </ng-container>
                 </div>
+                </div>
+                <div class="row actions"  >
+                <div *ngFor="let field of fields;" class="btn-inline">
+                      <ng-container *ngIf="field.type==='button'" dynamicField [field]="field" [group]="form">
+                      </ng-container>
+                    </div>
+                  </div>
               </form>
+
+
               </div>
               </div>
-              
             </div>
           </div>
         </div>
       </div>
+
+
         <div class="margin-top">
           <div  class="bigitem editProfileForm-add">          
             <div class="editProfileForm ">
@@ -37,7 +49,6 @@
                   {{ form.value | json }}
               </div>
             </div>
-              
-            </div>
+      </div>
 </div>
 </div>

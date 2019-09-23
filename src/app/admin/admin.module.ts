@@ -26,6 +26,8 @@ import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { UserDynamicFormComponent } from './user-dynamic-form/user-dynamic-form.component';
 import { FormTitleComponent } from './components/form-title/form-title.component';
+import { RegistrationComponent } from './registration/registration.component';
+
 const COMPONENTS = [
   HeaderComponent,
   MainrootComponent,
@@ -48,6 +50,7 @@ const COMPONENTS = [
   DynamicFormComponent,
   FormTitleComponent,
   UserDynamicFormComponent,
+  RegistrationComponent
                     ];
 @NgModule({
   declarations: COMPONENTS,
@@ -81,6 +84,7 @@ const COMPONENTS = [
     DynamicFormComponent,
     UserDynamicFormComponent,
     FormTitleComponent,
+    RegistrationComponent,
     RouterModule
   ],
   entryComponents: [

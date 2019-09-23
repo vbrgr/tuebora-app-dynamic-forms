@@ -14,5 +14,7 @@ export class ButtonComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onReset() {
+    this.group.reset();
+  }
 }
