@@ -200,7 +200,7 @@
             "type": "input"
           },
           "gender": {
-            "type": "radiobutton",
+            "type": "select",
             "name": "gender",
             "title": "Gender",
             "label": "Gender",
@@ -363,7 +363,7 @@
           "reset": {
             "type": "button",
             "inputType": "reset",
-            "htmlClass": "btn btn-default",
+            "htmlClass": "btn btn-default ws_cancel",
             "label": "Reset",
             "groupClass": "form-inline-btn"
           },
@@ -414,7 +414,7 @@
         },
         {
           "type": "reset",
-          "htmlClass": "btn btn-default",
+          "htmlClass": "btn btn-default ws_cancel",
           "title": "Reset"
         },
         {
@@ -625,6 +625,22 @@
               }
             ]
           },
+          "relocate": {
+            "name": "relocate",
+            "label": "Relocate",
+            "title": "Relocate",
+            "inputType": "checkbox",
+            "htmlClass": "",
+            "groupClass": "form-group",
+            "columnClass": "col-md-6",
+            "type": "checkbox",
+            "enum": [
+              {
+                "key": "Yes",
+                "value": "yes"
+              }
+            ]
+          },
           "comment": {
             "name": "comment",
             "title": "Comment",
@@ -649,7 +665,7 @@
           "reset": {
             "type": "button",
             "inputType": "reset",
-            "htmlClass": "btn btn-default",
+            "htmlClass": "btn btn-default ws_cancel",
             "label": "Reset",
             "groupClass": "form-inline-btn"
           },
@@ -690,6 +706,7 @@
               "htmlClass": "col-md-6",
               "items": [
                 "email",
+                "relocate",
                 "dateofBirth",
                 "comment",
                 "reset",

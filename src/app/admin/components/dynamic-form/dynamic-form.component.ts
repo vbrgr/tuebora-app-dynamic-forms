@@ -19,7 +19,7 @@ export class DynamicFormComponent implements OnInit {
   @Input() fields: FieldConfig[] = [];
 
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
-
+  formSubmited: boolean = false;
   form: FormGroup;
   get value() {
     return this.form.value;
@@ -32,16 +32,17 @@ export class DynamicFormComponent implements OnInit {
   }
 
   onSubmit(event: Event) {
-   // console.log(1);
+    // console.log(1);
     event.preventDefault();
     event.stopPropagation();
     if (this.form.valid) {
+      this.formSubmited = true;
       this.submit.emit(this.form.value);
+      
     } else {
       this.validateAllFormFields(this.form);
     }
   }
-
   createControl() {
     const group = this.fb.group({});
     this.fields.forEach(field => {

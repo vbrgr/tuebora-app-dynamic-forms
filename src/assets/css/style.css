@@ -982,7 +982,7 @@ li.undoPage a:hover{background:transparent}
 .tuebora-ui .table tr td{ vertical-align:top !important;}
 
 .wizard > .actions > ul .beginSetup { border-radius: 30px;}
-.modal-footer .btn, .pageheadingbuttons .btn, .tableCellLeft .btn, .loginFormBlock .btn, .actions .btn, .detailsRightBlock .btn{  border-radius: 30px;}
+.modal-footer .btn, .pageheadingbuttons .btn, .tableCellLeft .btn, .loginFormBlock .btn, .actions .btn, .detailsRightBlock .btn{  border-radius: 30px; margin: 2px;}
 .customWidth600{ width:600px !important;}
 .customWidth1024{ width:1024px !important;}
 
@@ -1682,5 +1682,46 @@ a.actionButtons.noborder .star-ir-side i{    margin-top: 0;}
 .form-group{position: relative;}
 .error-message{position: absolute;}
 .btn-inline{display: inline-block;}
+.checkbox-inline{ width: 20%; }
+.dynamic-form .form-group{min-height: 78px;}
 
-
+.dynamic-form label.radio-inline { padding-left: 20px; }
+.ws_cancel {
+    background: #ea6c55;
+    color: #fff;
+    height: 35px;
+    border-radius: 0px;
+    padding: 0.5em 26px;
+	margin-right: 10px;
+	border:none;
+}
+.ws_cancel:hover {
+	background-color: #ea6c55 !important;
+	color: #fff;
+}
+.ws_cancel:focus {
+	background-color: #ea6c55 !important;
+	color: #fff;
+}
+.btn-success{
+	background: #72b100;
+    color: #fff;
+    height: 35px;
+    border-radius: 0px;
+    padding: 0.5em 26px;
+}
+.btn-success:hover {
+	background-color: #72b100 !important;
+	color: #fff;
+}
+.btn-success:focus {
+	background-color: #72b100 !important;
+	color: #fff;
+}
+.btn-success:active {
+	background-color: #72b100 !important;
+	color: #fff;
+}
+.json-data-output{
+	padding: 5px 30px 20px 40px;
+}

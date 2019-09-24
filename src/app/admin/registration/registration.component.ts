@@ -31,5 +31,6 @@ export class RegistrationComponent {
     return this.formdata[name];
   }
   submit(value: any) {
+    
    }
 }
