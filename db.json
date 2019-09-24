@@ -200,7 +200,7 @@
             "type": "input"
           },
           "gender": {
-            "type": "select",
+            "type": "radiobutton",
             "name": "gender",
             "title": "Gender",
             "label": "Gender",
