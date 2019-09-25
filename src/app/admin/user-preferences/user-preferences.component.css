@@ -1,2 +1,8 @@
 .pre-uiblock{ border: 1px solid #becadc; padding: 15px;}
-.preferences-contnet-block{ border: solid 1px #dee7f4; background-color: #eef5ff; padding: 10px;}
+.preferences-contnet-block{ padding: 10px; }
+.preferences-block-container h5{ width: 55%;}
+.open-actionBlock{ border: solid 1px #dee7f4; background-color: #eef5ff; padding: 10px; display: table; position: relative; width: 100%; }
+.actionBlockclose{position: absolute; right: 13px; font-size: 18px;  width: 32px;  height: 32px; border: solid 1px #c1c8d2;  border-radius: 100%;  text-align: center;  color: #003767;  cursor: pointer;}
+.glyph-edit-bt{ background: none;}
+optgroup{ margin: 0;  border: 1px solid green;}
+.open-actionBlock .btn{ margin-right: 10px;}

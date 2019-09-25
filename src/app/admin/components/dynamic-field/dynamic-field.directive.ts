@@ -12,7 +12,7 @@ import { TextareaComponent } from '../textarea/textarea.component';
 import { FormTitleComponent } from '../form-title/form-title.component';
 
 
-const componentMapper = {
+const componentMapper  = {
   input: InputComponent,
   object: FormTitleComponent,
   string: InputComponent,
@@ -36,6 +36,13 @@ export class DynamicFieldDirective implements OnInit {
     private container: ViewContainerRef
   ) {}
   ngOnInit() {
+    if (!componentMapper[this.field.type]) {
+      const supportedTypes = Object.keys(componentMapper).join(', ');
+      throw new Error(
+        `Trying to use an unsupported type (${this.field.type}).
+        Supported types: ${supportedTypes}`
+      );
+    }
     const factory = this.resolver.resolveComponentFactory(
       componentMapper[this.field.type]
     );

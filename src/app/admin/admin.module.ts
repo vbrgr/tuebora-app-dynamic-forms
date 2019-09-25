@@ -27,6 +27,8 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
 import { UserDynamicFormComponent } from './user-dynamic-form/user-dynamic-form.component';
 import { FormTitleComponent } from './components/form-title/form-title.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { DatamodelComponent } from './datamodel/datamodel.component';
+
 
 const COMPONENTS = [
   HeaderComponent,
@@ -39,6 +41,7 @@ const COMPONENTS = [
   HeaderNavComponent,
   TueSidebarComponent,
   TueboraLogoComponent,
+  DatamodelComponent,
   InputComponent,
   SelectComponent,
   RadioComponent,

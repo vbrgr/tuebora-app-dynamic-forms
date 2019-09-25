@@ -1,30 +1,26 @@
 <div class="sidebar" data-background-color="transparent">
 
     <div class="logo">
-      <a routerLink="/"><img alt="Brand Logo in sidebar" src="assets/images/logo.png" class="img-responsive"></a>
+      <tuebora-logo></tuebora-logo>
     </div>
-
-
     <div class="sidebar-wrapper mCustomScrollbar">
+      <!-- <tuebora-sidebar></tuebora-sidebar> -->
       <ul class="nav">
-
       <li><a routerLink="/"><span class="profilePic"><img class="img-circle" alt="sanjay" src="assets/images/sanjay.jpg"></span><p class="profileName">Sanjay Nadimpalli</p></a></li>
-
       <!-- <li><a routerLink="/">
         <span class="sidebar-mini"><i class="fa fa-home"></i></span><p>Home</p></a></li> -->
-
-      <li *ngFor="let menu of primaryData; let i=index;">
-          <a [routerLink]="menu.path" *ngIf="menu.children.length<=0">
+      <li *ngFor="let menu of primaryMenuData; let i=index;">
+          <a [routerLink]="menu.path" *ngIf="menu.children.length<=0" [routerLinkActive]="['active']">
             <span class="sidebar-mini"><i [class]="menu.icon" aria-hidden="true"></i></span><p>{{menu.label}}</p>
           </a>
-      <a data-toggle="collapse" *ngIf="menu.children.length > 0" href="#sidebar-items-conference{{i}}"   [ngClass]="(menu.children.length > 0)?'collapsed':''">
+      <a data-toggle="collapse"  *ngIf="menu.children.length > 0" href="#sidebar-items-conference{{i}}"   [ngClass]="(menu.children.length > 0)?'collapsed':''">
         <i [class]="menu.icon" aria-hidden="true"></i>
         <p>{{menu.label}} <b class="caret" *ngIf="menu.children.length > 0" ></b></p></a>
 
             <div class="collapse" id="sidebar-items-conference{{i}}" *ngIf="menu.children.length > 0">
               <ul class="nav">
                 <li *ngFor="let submenu of menu.children">
-                  <a [routerLink]="submenu.path"><span class="sidebar-mini"><i class="fa fa-heart-o"></i></span><p>{{submenu.label}}</p></a></li>
+                  <a [routerLink]="submenu.path" [target]="menu.target" [routerLinkActive]="['active']"><span class="sidebar-mini"><i class="fa fa-heart-o"></i></span><p>{{submenu.label}}</p></a></li>
 
                 </ul>
         </div>
@@ -35,7 +31,7 @@
     </ul>
 
     <ul class="nav">
-        <li *ngFor="let umenu of utilityData">
+        <li *ngFor="let umenu of utilityMenuData">
             <a [routerLink]="umenu.path" [target]="umenu.target">
         <span class="sidebar-mini"><i [class]="umenu.icon" aria-hidden="true"></i></span>
         <p>{{umenu.label}}</p></a></li>

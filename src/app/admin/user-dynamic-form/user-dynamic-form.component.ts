@@ -10,7 +10,7 @@ import { FormService } from '../../services/form.service';
 })
 export class UserDynamicFormComponent {
   formdata: {};
-  @ViewChild(DynamicFormComponent, { static: true} ) form: DynamicFormComponent;
+  @ViewChild('DynamicFormComponent', {static: false}) form: DynamicFormComponent;
   constructor(private forms: FormService) {
     this.forms.getForm().subscribe(res => {
       const main = [];
@@ -31,5 +31,6 @@ export class UserDynamicFormComponent {
     return this.formdata[name];
   }
   submit(value: any) {
+   // console.log(value);
    }
 }

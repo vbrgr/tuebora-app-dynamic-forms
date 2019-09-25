@@ -1,35 +1,32 @@
-<div id="wrapper"
-  [ngClass]="(menuPosition=='top'?'topnavi':'') || (menuPosition=='top-noicon'?'top-noicon':'') || (menuPosition=='side-toggle'?'side-toggle':'') || (menuPosition=='side-hover'?'sidebar-mini':'') ">
-  <div *ngIf="menuPosition==='top'">
-    <tuebora-nav [primaryMenuData]="primaryMenu" [utilityMenuData]="utilityData" [menuType]="menuPosition">
-    </tuebora-nav>
-  </div>
-  <div *ngIf="menuPosition==='top-noicon'">
-    <!-- <app-header-noicon></app-header-noicon> -->
-    <tuebora-nav [primaryMenuData]="primaryMenu" [utilityMenuData]="utilityData" [menuType]="menuPosition">
-    </tuebora-nav>
-  </div>
-  <div *ngIf="menuPosition==='side-toggle'">
-    <!-- <app-nav-side-toggle></app-nav-side-toggle> -->
-    <ng-sidebar-container style="height: 100vh; position: static;">
-      <ng-sidebar [(opened)]="_opened" position="left" class="ng-sidebar">
-        <tuebora-sidebar [primaryMenuData]="primaryMenu" [utilityMenuData]="utilityData" (closeEvent)="_toggleOpened()" >
-        </tuebora-sidebar>
-      </ng-sidebar>
-      <!-- Page content -->
-      <div ng-sidebar-content>
-        <!-- <button (click)="_toggleSidebar()">Toggle sidebar</button> -->
-        <button (click)="_toggleOpened()" class="btn btn-default toggle"><i class="fa fa-bars"
-            aria-hidden="true"></i></button>
-
-        <router-outlet></router-outlet>
+<ng-sidebar-container style="height: 100vh; position: static;">
+  <!-- Page content -->
+  <div ng-sidebar-content>
+    <!-- <button (click)="_toggleSidebar()">Toggle sidebar</button> -->
+    <button (click)="_toggleOpened()" class="btn btn-default toggle"><i class="fa fa-bars"
+        aria-hidden="true"></i></button>
+    <div id="wrapper"
+      [ngClass]="(menuPosition=='top'?'topnavi':'') || (menuPosition=='top-noicon'?'top-noicon':'') || (menuPosition=='side-toggle'?'side-toggle':'') || (menuPosition=='side-hover'?'sidebar-mini':'') ">
+      <div *ngIf="menuPosition==='top'">
+        <tuebora-nav [primaryMenuData]="primaryMenu" [utilityMenuData]="utilityData" [menuType]="menuPosition">
+        </tuebora-nav>
       </div>
-    </ng-sidebar-container>
+      <div *ngIf="menuPosition==='top-noicon'">
+        <!-- <app-header-noicon></app-header-noicon> -->
+        <tuebora-nav [primaryMenuData]="primaryMenu" [utilityMenuData]="utilityData" [menuType]="menuPosition">
+        </tuebora-nav>
+      </div>
+      <div *ngIf="menuPosition==='side-toggle'">
+        <!-- <app-nav-side-toggle></app-nav-side-toggle> -->
+        <ng-sidebar [(opened)]="_opened" position="left" class="ng-sidebar" closeOnClickOutside="true">
+          <tuebora-sidebar [primaryMenuData]="primaryMenu" [utilityMenuData]="utilityData"
+            (closeEvent)="_toggleOpened()">
+          </tuebora-sidebar>
+        </ng-sidebar>
+      </div>
+      <div *ngIf="menuPosition==='side-hover'">
+        <app-nav-side-hover [primaryMenuData]="primaryMenu" [utilityMenuData]="utilityData"></app-nav-side-hover>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
   </div>
-  <div *ngIf="menuPosition==='side-hover'">
-    <app-nav-side-hover></app-nav-side-hover>
-  </div>
-  <div *ngIf="menuPosition!=='side-toggle'">
-    <router-outlet ></router-outlet>
-  </div>
-</div>
+</ng-sidebar-container>

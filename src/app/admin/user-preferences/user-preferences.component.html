@@ -9,44 +9,43 @@
             </div>
           </div>
 		</div>
-
 		<!-- Page Heading Completed -->
     <div class="container-fluid preferences-block-container">
         <div class="pre-uiblock">
           <div class="row">
 
                 <div class="col-md-12">
-
                   <div class="preferences-contnet-block">
                       <form [formGroup]='preferencesForm'>
                     <div class="row">
+                      <div class="col-md-12" *ngIf="!isEdit">
+                          <h5>Preferences <button (click)="actionEdit()" class="glyphicon glyphicon-pencil glyph-edit-bt"></button></h5>
+                          <div *ngFor="let optData of menuOptions">
+                              <span *ngIf="optData.value===menuType">{{optData.label}}</span>
+                          </div>
+                      </div>
+                      <div class="open-actionBlock" *ngIf="isEdit">
+                        <span class="actionBlockclose" (click)="closeBlock()">x</span>
 
-                      <div class="col-md-3">
+                          <div class="col-md-3" >
 
-                          <div class="form-group">
-                              <label>Select Preferences</label>
-                              <!-- <input type="text" class="form-control" formControlName="preferences"  placeholder="Enter Course Name"> -->
-
-                              <select class="form-control" formControlName="position" id="sel1">
-                                  <option selected value='top'>Top Menu (with icon)</option>
-                                  <option value='top-noicon'>Top Meu (without icon)</option>
-                                  <option value='side-toggle'>Slide Menu (with toggle button)</option>
-                                  <option value='side-hover'>Slide Menu (on hover)</option>
-                                </select>
-
-
-
-                            </div>
-                            <div class="form-group">
-                                <button class="btn btn-default saveSubmitBtn" (click)="setUserpreference()"> Save</button>
-                            </div>
-
-
-
-
-                  </div>
+                              <div class="form-group">
+                                  <label>Select Preferences</label>
+                                  <!-- <input type="text" class="form-control" formControlName="preferences"  placeholder="Enter Course Name"> -->
+                                  <select class="form-control" formControlName="position" id="sel1">
+                                      <optgroup *ngFor="let optData of menuOptions">
+                                          <option [selected]="true" [value]='optData.value' *ngIf="optData.value===menuType">{{optData.label}}</option>
+                                          <option [value]='optData.value' *ngIf="optData.value!==menuType">{{optData.label}}</option>
+                                      </optgroup>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-default cancelRejectBtn" (click)="closeBlock()"> Cancel</button>
+                                    <button class="btn btn-default saveSubmitBtn" (click)="setUserpreference()"> Save</button>
+                                </div>
+                      </div>
+                      </div>
                     </div>
-
                   </form>
                 </div>
 

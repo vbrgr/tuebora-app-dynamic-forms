@@ -10,7 +10,7 @@ import { MenuService } from 'src/app/services/menu.service';
 export class HeaderNavComponent implements OnInit {
  @Input() primaryMenuData: any;
  @Input() utilityMenuData: any;
- @Input() menuType:any;
+ @Input() menuType: any;
 
   constructor(private menuServices: MenuService) { }
 

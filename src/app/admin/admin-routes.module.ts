@@ -4,11 +4,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserPreferencesComponent } from './user-preferences/user-preferences.component';
 import { UserDynamicFormComponent } from './user-dynamic-form/user-dynamic-form.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { DatamodelComponent } from './datamodel/datamodel.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
+  },
+  {
+     path: 'datamodel',
+    component: DatamodelComponent,
   },
   {
     path: 'user-preferences',

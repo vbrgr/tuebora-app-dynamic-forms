@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter, } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter,  } from '@angular/core';
+
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -12,29 +12,17 @@ export class TueSidebarComponent implements OnInit {
   @Input() primaryMenuData: any;
   @Input() utilityMenuData: any;
   @Output() closeEvent = new EventEmitter();
-
-
   private _opened: boolean = false;
-
-
-
   constructor() { }
-
   ngOnInit() {
-    console.log('slidemenu', this.primaryMenuData);
-
+   // console.log('slidemenu', this.primaryMenuData);
   }
-
   slideClose(){
     this.closeEvent.emit();
   }
   actionLink(){
-  //  alert(1);
-  
-
+      this.closeEvent.emit(true);
   }
-
-
 
 
 }

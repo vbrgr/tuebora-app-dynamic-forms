@@ -13,9 +13,9 @@ formd: FieldConfig[];
               private readonly fb: FormBuilder) { }
 
   public getForm() {
-    return this.http.get('http://192.168.1.37:3000/form');
+    return this.http.get('http://localhost:3000/form');
   }
   public getRegForm() {
-    return this.http.get('http://192.168.1.37:3000/reg-form');
+    return this.http.get('http://localhost:3000/reg-form');
   }
 }

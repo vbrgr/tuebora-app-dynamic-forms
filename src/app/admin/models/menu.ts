@@ -17,3 +17,8 @@ export class NavigationMenu {
   children: Children[];
 }
 
+export class UserPreferences {
+  label: string;
+  value: string;
+}
+

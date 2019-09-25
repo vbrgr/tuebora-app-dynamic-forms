@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MenuService } from 'src/app/services/menu.service';
 import { NavigationMenu } from '../models/menu';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mainroot',
@@ -19,10 +20,13 @@ export class MainrootComponent implements OnInit {
   //   this._opened = !this._opened;
   // }
 
+  @Output() _onRerender: EventEmitter<null> = new EventEmitter<null>();
+
   constructor(private menuServices: MenuService) {
    this.menuServices.menuEvent.subscribe(res => {
       this.menuPosition = res.position;
     });
+
   }
 
   ngOnInit() {
@@ -37,8 +41,6 @@ export class MainrootComponent implements OnInit {
     this._opened = !this._opened;
 
   }
-
-
 
 
 

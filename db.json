@@ -135,7 +135,6 @@
           "target": "_self",
           "children": []
         }
-        
       ]
     }
   },
@@ -726,6 +725,24 @@
           "title": "Submit"
         }
       ]
+    }
+  ],
+  "user-prefernce": [
+    {
+      "label": "Top Menu (with icon)",
+      "value": "top"
+    },
+    {
+      "label": "Top Meu (without icon)",
+      "value": "top-noicon"
+    },
+    {
+      "label": "Slide Menu (with toggle button)",
+      "value": "side-toggle"
+    },
+    {
+      "label": "Slide Menu (on hover)",
+      "value": "side-hover"
     }
   ]
 }
