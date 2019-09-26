@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
@@ -65,6 +65,10 @@ const COMPONENTS = [
               SidebarModule.forRoot(),
               RouterModule.forChild(routes)
             ],
+schemas: [
+          CUSTOM_ELEMENTS_SCHEMA,
+          NO_ERRORS_SCHEMA
+            ],
   exports: [
     HeaderComponent,
     MainrootComponent,
@@ -88,7 +92,7 @@ const COMPONENTS = [
     UserDynamicFormComponent,
     FormTitleComponent,
     RegistrationComponent,
-    RouterModule
+    RouterModule,
   ],
   entryComponents: [
     InputComponent,

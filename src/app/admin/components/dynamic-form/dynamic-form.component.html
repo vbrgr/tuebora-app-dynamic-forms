@@ -2,7 +2,9 @@
     <div class="container-fluid">
       <div class="left-col">
           <div *ngFor="let field of fields;"  class="btn-inline">
-                  <h2 class="likeWhat" *ngIf="field.type==='object'" dynamicField [field]="field" ></h2>
+                 <!--  <h2 class="likeWhat" *ngIf="field && field.type==='object'" dynamicField [field]="field" ></h2> -->
+                 <!-- <ng-container *ngIf="field.type==='button'" dynamicField [field]="field" [group]="form">
+                  </ng-container> -->
             </div>
        
       </div>

@@ -1,4 +1,4 @@
-<div [formGroup]="group" [class]="field.columnClass" >
+<div *ngIf="field" [formGroup]="group" [class]="field.columnClass" >
           <div  [class]="field.groupClass" >
 <label>{{field.label}} </label>
 <textarea   [formControlName]="field.name" [class]="field.htmlClass" name="field.name" ></textarea>

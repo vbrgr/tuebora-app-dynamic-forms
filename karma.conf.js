@@ -15,6 +15,10 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
+    files: [
+      'node_modules/jquery/dist/jquery.min.js',
+      'node_modules/bootstrap/dist/js/bootstrap.min.js'
+      ],
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/tuebora-app'),
       reports: ['html', 'lcovonly', 'text-summary'],

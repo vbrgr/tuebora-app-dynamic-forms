@@ -18,13 +18,13 @@ import { CustomValidationAndMessage } from '../validations/custom-validation-and
 })
 export class DynamicFormComponent implements OnInit {
   @Input() fields: FieldConfig[] = [];
+  // tslint:disable-next-line:no-output-native
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
-  formSubmited: boolean = false;
+  formSubmited = false;
   form: FormGroup;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    // console.log(1);
     this.form = this.createControl();
   }
   get value() {
@@ -43,22 +43,24 @@ export class DynamicFormComponent implements OnInit {
   }
   createControl() {
     const group = this.fb.group({});
-    this.fields.forEach(field => {
+    if (this.fields) {
+      this.fields.forEach(field => {
 
-      if (field.validations) {
-        field.validations.forEach(key => {
-          CustomValidationAndMessage.createValidator(field.label , key);
-        });
-      }
-      if (field.type !== 'button' && field.type !== 'object') {
-        const control = this.fb.control(
-          field.value,
-          this.bindValidations(field.validations || [])
-        );
-        group.addControl(field.name, control);
-        // console.log(control.errors);
-      }
-    });
+        if (field.validations) {
+          field.validations.forEach(key => {
+            CustomValidationAndMessage.createValidator(field.label , key);
+          });
+        }
+        if (field.type !== 'button' && field.type !== 'object') {
+          const control = this.fb.control(
+            field.value,
+            this.bindValidations(field.validations || [])
+          );
+          group.addControl(field.name, control);
+          // console.log(control.errors);
+        }
+      });
+    }
     return group;
   }
 

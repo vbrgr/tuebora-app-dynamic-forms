@@ -1,4 +1,4 @@
-<div [formGroup]="group"  [class]="field.columnClass">
+<div *ngIf="field" [formGroup]="group"  [class]="field.columnClass">
     <div  [class]="field.groupClass" >
   <label > {{field.label}} </label>
   <select [formControlName]="field.name" [class]="field.htmlClass" placeholder="field.label">

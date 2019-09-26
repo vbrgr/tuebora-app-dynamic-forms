@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from 'src/app/services/menu.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { UserPreferences } from '../models/menu';
 
 @Component({
@@ -15,7 +14,7 @@ export class UserPreferencesComponent implements OnInit {
   isEdit = false;
   menuOptions: UserPreferences;
   preferencesForm: FormGroup;
-  constructor(private menuServices: MenuService, private formBuilderServices: FormBuilder, private routerService: Router) {
+  constructor(private menuServices: MenuService, private formBuilderServices: FormBuilder) {
     this.preferencesForm = this.formBuilderServices.group({
       position: ['top', [Validators.required]],
     });
