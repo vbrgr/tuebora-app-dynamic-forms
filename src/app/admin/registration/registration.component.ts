@@ -8,9 +8,9 @@ import { FieldConfig } from '../models/Field.interface';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit {
   formdata: {};
-  @ViewChild(DynamicFormComponent, { static: true} ) form: DynamicFormComponent;
+  @ViewChild(DynamicFormComponent, { static: false} ) form: DynamicFormComponent;
   constructor(private forms: FormService) {
     this.forms.getRegForm().subscribe(res => {
       const main = [];
@@ -31,6 +31,7 @@ export class RegistrationComponent {
     return this.formdata[name];
   }
   submit(value: any) {
-    
    }
+   ngOnInit() {
+  }
 }
