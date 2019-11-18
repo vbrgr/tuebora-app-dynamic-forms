@@ -23,13 +23,13 @@
                   <div class="row">
                 <div *ngFor="let field of fields;" >
                 
-                  <ng-container *ngIf="field.type!=='object' && field.type!=='button'" dynamicField [field]="field" [group]="form">
+                  <ng-container *ngIf="field && field.type!=='object' && field.type!=='button'" dynamicField [field]="field" [group]="form">
                   </ng-container>
                 </div>
                 </div>
                 <div class="row actions"  >
                 <div *ngFor="let field of fields;" class="btn-inline">
-                      <ng-container *ngIf="field.type==='button'" dynamicField [field]="field" [group]="form">
+                      <ng-container *ngIf="field &&  field.type==='button'" dynamicField [field]="field" [group]="form">
                       </ng-container>
                     </div>
                   </div>

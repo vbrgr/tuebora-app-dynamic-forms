@@ -31,7 +31,6 @@ export class UserDynamicFormComponent implements OnInit {
     return this.formdata[name];
   }
   submit(value: any) {
-   // console.log(value);
    }
    ngOnInit() {
   }

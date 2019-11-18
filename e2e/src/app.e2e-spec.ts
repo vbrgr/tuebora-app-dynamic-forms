@@ -1,16 +1,16 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
-describe('workspace-project App', () => {
+describe('Tuebora App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display Dashboard title', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('tuebora-app app is running!');
+    expect(page.getTitleText()).toEqual('Dashboard');
   });
 
   afterEach(async () => {

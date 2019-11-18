@@ -17,5 +17,4 @@ export class ButtonComponent implements OnInit {
   onReset() {
     this.group.reset();
   }
-  
 }

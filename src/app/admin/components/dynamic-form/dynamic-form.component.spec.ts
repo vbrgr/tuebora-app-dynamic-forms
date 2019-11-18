@@ -27,27 +27,26 @@ describe('DynamicFormComponent', () => {
       el = de.nativeElement;
     });
   }));
-
-
-  /* it('form invalid when empty', () => {
+  it('form should be invalid', async(() => {
     Object.keys(component.form.controls).forEach(field => {
-      component.form.get(field).setValue('');
+       component.form.get(field).setValue('');
     });
     expect(component.form.valid).toBeFalsy();
-  }); */
-
-  it('form should be valid', () => {
+  }));
+  it('form should be valid', async(() => {
     Object.keys(component.form.controls).forEach(field => {
     //  component.form.get(field).setValue('');
     });
     expect(component.form.valid).toBeTruthy();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(DynamicFormComponent);
-    component = fixture.componentInstance;
+  }));
+  it('should call onSubmit method', async(() => {
     fixture.detectChanges();
-  });
+    const button = fixture.debugElement.query(By.css('button')).nativeElement;
+    expect(button.classList.contains('success')).toBeTruthy();
+    expect(button.classList.contains('danger')).toBeFalsy();
+    button.click();
+    expect(component.submit).toHaveBeenCalledTimes(0);
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy;

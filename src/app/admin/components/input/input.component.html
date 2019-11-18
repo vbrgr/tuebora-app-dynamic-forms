@@ -1,5 +1,5 @@
 <div *ngIf="field" [formGroup]="group"  [class]="field.columnClass" >
-        <div  [class]="field?.groupClass" >
+        <div  [class]="field.groupClass" >
 <label>{{field.label}} </label>
 <input  [class]="field.htmlClass" [formControlName]="field.name" [placeholder]="field.label" [type]="field.inputType" >
 <ng-container *ngFor="let validation of field.validations;"  >
